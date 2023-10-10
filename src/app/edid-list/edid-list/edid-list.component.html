@@ -1,0 +1,47 @@
+<div class="controls">
+  <label for="searchInput"
+    >Filter by name:
+
+    <input
+      id="searchInput"
+      [formControl]="searchControl"
+      type="text"
+      placeholder="search by name"
+    />
+  </label>
+
+  <form [formGroup]="sortingForm">
+    <label for="sortingField"
+      >Select a field to sort by:
+
+      <select id="sortingField" formControlName="sortingByFieldControl">
+        <option *ngFor="let field of sortFields" [value]="field">
+          {{ field }}
+        </option>
+      </select>
+    </label>
+
+    <label for="sortOrderSelect"
+      >Sort order:
+
+      <select id="sortOrderSelect" formControlName="selectedSortOrderControl">
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+    </label>
+  </form>
+</div>
+
+<div class="list-wrapper">
+  <ng-container *ngIf="edids$ | async as edids">
+    <ng-container
+      *ngFor="
+        let item of edids
+          | nameFilter : searchTerm
+          | sort : sortField : sortOrder
+      "
+    >
+      <app-edid-item [item]="item"></app-edid-item>
+    </ng-container>
+  </ng-container>
+</div>

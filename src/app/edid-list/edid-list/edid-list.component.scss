@@ -1,0 +1,16 @@
+.list-wrapper {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.controls,
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.controls {
+  margin-bottom: 16px;
+}

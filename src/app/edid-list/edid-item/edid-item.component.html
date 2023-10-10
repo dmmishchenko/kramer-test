@@ -1,0 +1,14 @@
+<button
+  class="edid-wrapper"
+  [class.active]="item.selected"
+  [class.disabled]="!!item.status"
+  (click)="!!item.status ? itemClicked() : undefined"
+>
+  <h5>
+    {{ item.Name }}
+  </h5>
+  <div class="content">
+    <p>{{ item.NativeResolution }}</p>
+    <small>{{ item.Size }}</small>
+  </div>
+</button>

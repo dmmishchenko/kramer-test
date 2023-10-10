@@ -1,0 +1,61 @@
+$border-radius: 8px;
+$padding-space: 8px;
+.edid-wrapper {
+  height: 120px;
+  width: 140px;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: transparent;
+  border-radius: $border-radius;
+  border-color: lightgrey;
+
+  &:not(.disabled) {
+    cursor: pointer;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+h5 {
+  padding: $padding-space 0;
+  margin: 0;
+  width: 100%;
+  border-top-left-radius: calc($border-radius - 1px);
+  border-top-right-radius: calc($border-radius - 1px);
+  transition: linear 0.2s;
+
+  .edid-wrapper:hover:not(.disabled) &,
+  .edid-wrapper:focus:not(.disabled) &,
+  .edid-wrapper.active & {
+    background-color: #009688;
+    color: white;
+  }
+
+  @at-root.edid-wrapper.disabled & {
+    background: gray;
+    color: white;
+  }
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(100% - #{$padding-space});
+
+  p {
+    align-self: flex-start;
+    margin-top: $padding-space;
+  }
+  small {
+    align-self: flex-end;
+  }
+}

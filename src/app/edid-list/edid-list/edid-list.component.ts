@@ -5,7 +5,7 @@ import {
   OnInit,
   inject,
 } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, FormControl, FormGroup } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { FILE_NAMES } from 'src/app/base/consts';
 import { SortingDirections } from 'src/app/base/types';

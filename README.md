@@ -22,5 +22,4 @@ Run `ng test` to execute the unit tests
 
 ## Running end-to-end tests
 
-- Run `ng serve` and `npx cypress open`
-- then choose e2e testing and execute test `edid-item.cy.ts`
+- Run `ng e2e`, it will run cypress in headless mode

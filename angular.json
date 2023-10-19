@@ -139,7 +139,7 @@
           "options": {
             "devServerTarget": "kramer-test:serve",
             "watch": true,
-            "headless": false
+            "headless": true
           },
           "configurations": {
             "production": {
